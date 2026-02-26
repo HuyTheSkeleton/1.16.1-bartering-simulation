@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bartering Simulation</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-section">
+            <h2>1.16.1 Piglin Bartering Simulation</h2>
+            <button class="btn-reset" id="resetOrderBtn">Reset to Default</button>
+        </div>
+
+        <div class="calculator-panel">
+            <h3>🎯 Target Calculator</h3>
+            <div class="calc-row">
+                <span>You want</span>
+                <input type="number" id="targetNum" value="20" min="1" max="1000">
+                <div class="slider-wrapper">
+                    <input type="range" id="targetSlider" min="1" max="1000" value="20">
+                </div>
+                <span>of</span>
+                
+                <div class="custom-select" id="customSelect">
+                    <div class="select-selected" id="selectSelected"></div>
+                    <div class="select-items" id="selectItems"></div>
+                </div>
+
+            </div>
+            <div class="calc-result">
+                You need <span id="requiredGold" class="drop-value">0</span> gold on average.
+            </div>
+        </div>
+        
+        <div class="gold-section">
+            <div class="gold-header">
+                <span>Total Gold to Barter:</span>
+                <input type="number" id="goldNum" value="100" min="0" max="1000">
+            </div>
+            <input type="range" id="goldSlider" min="0" max="1000" value="100">
+        </div>
+
+        <table id="resultsTable">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Probability</th>
+                    <th>Min - Max</th>
+                    <th class="sortable" id="sortExpected">Expected Total ↕</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

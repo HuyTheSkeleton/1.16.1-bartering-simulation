@@ -1,0 +1,323 @@
+:root {
+    --bg-dark: #1e2224;
+    --bg-panel: #2a3033;
+    --text-main: #e2e8f0;
+    --text-muted: #94a3b8;
+    --cyan-accent: #a7dbe9;
+    --green-accent: #8bc28b;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: var(--bg-panel);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--green-accent);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin: 0;
+    color: var(--cyan-accent);
+}
+
+.btn-reset {
+    background-color: transparent;
+    border: 1px solid var(--cyan-accent);
+    color: var(--cyan-accent);
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.btn-reset:hover {
+    background-color: rgba(167, 219, 233, 0.1);
+    color: var(--text-main);
+}
+
+.calculator-panel {
+    background: rgba(167, 219, 233, 0.05);
+    border: 1px solid rgba(167, 219, 233, 0.2);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.calculator-panel h3 {
+    margin-top: 0;
+    color: var(--cyan-accent);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.calc-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.calc-result {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: 1px dashed rgba(255,255,255,0.1);
+}
+
+.custom-select {
+    position: relative;
+    width: 250px;
+    user-select: none;
+}
+
+.select-selected {
+    background: rgba(0,0,0,0.2);
+    border: 1px solid var(--text-muted);
+    color: var(--text-main);
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: border-color 0.2s;
+}
+
+.select-selected:hover {
+    border-color: var(--cyan-accent);
+}
+
+.select-selected:after {
+    content: "▼";
+    position: absolute;
+    right: 15px;
+    font-size: 0.8rem;
+    color: var(--cyan-accent);
+}
+
+.select-items {
+    position: absolute;
+    background-color: var(--bg-panel);
+    border: 1px solid var(--cyan-accent);
+    top: 110%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-radius: 6px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    display: none;
+}
+
+.select-items div {
+    color: var(--text-main);
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.select-items div:hover {
+    background-color: rgba(167, 219, 233, 0.1);
+}
+
+.select-show {
+    display: block;
+}
+
+input[type="number"] {
+    background: rgba(0,0,0,0.2);
+    border: 1px solid var(--text-muted);
+    color: var(--text-main);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    width: 80px;
+    text-align: center;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: var(--cyan-accent);
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+.slider-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-grow: 1;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: var(--cyan-accent);
+    cursor: pointer;
+    margin-top: -6px;
+    box-shadow: 0 0 10px rgba(167, 219, 233, 0.4);
+    transition: transform 0.1s;
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: rgba(0,0,0,0.3);
+    border-radius: 4px;
+}
+
+.gold-section {
+    margin: 30px 0;
+    background: rgba(0,0,0,0.15);
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.gold-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--green-accent);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    vertical-align: middle;
+}
+
+th {
+    background-color: rgba(0,0,0,0.2);
+    color: var(--cyan-accent);
+    font-weight: 600;
+}
+
+.item-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mc-icon {
+    width: 28px;
+    height: 28px;
+    image-rendering: pixelated;
+}
+
+.sortable {
+    cursor: pointer;
+    transition: color 0.2s;
+    user-select: none;
+}
+
+.sortable:hover {
+    color: var(--green-accent);
+}
+
+tr.draggable-row {
+    cursor: grab;
+    transition: background-color 0.2s;
+}
+
+tr.draggable-row:active {
+    cursor: grabbing;
+}
+
+tr.draggable-row:hover {
+    background-color: rgba(139, 194, 139, 0.1);
+}
+
+tr.dragging {
+    opacity: 0.5;
+    background-color: rgba(167, 219, 233, 0.2);
+}
+
+.drop-value {
+    color: var(--green-accent);
+    font-weight: bold;
+}
+
+.important-trade {
+    background-color: rgba(139, 194, 139, 0.05);
+    border-left: 3px solid var(--green-accent);
+}
+
+.group-toggle {
+    cursor: pointer;
+}
+
+.group-toggle:hover {
+    color: var(--cyan-accent);
+}
+
+.sub-row {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.sub-row td:first-child {
+    padding-left: 40px;
+}
+
+.sub-row .mc-icon {
+    width: 20px;
+    height: 20px;
+}
